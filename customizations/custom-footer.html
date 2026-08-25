@@ -1,0 +1,15 @@
+<!-- PETABLOCKS BookStack Custom Footer
+     Inject via: Admin → Settings → Customisation → Custom HTML Body End Content -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const footer = document.querySelector('.footer-links');
+    if (footer) {
+      const pb = document.createElement('span');
+      pb.style.marginLeft = '8px';
+      pb.style.color = '#6b7280';
+      pb.style.fontSize = '0.875rem';
+      pb.textContent = '© PETABLOCKS Network';
+      footer.appendChild(pb);
+    }
+  });
+</script>

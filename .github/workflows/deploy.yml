@@ -1,0 +1,48 @@
+name: Deploy Wiki Config to PETABLOCKS-FEA
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Sync customizations to PETABLOCKS-FEA
+        run: |
+          rsync -avz --delete \
+            --exclude='.git' \
+            -e "ssh -o StrictHostKeyChecking=no" \
+            ./customizations/ root@10.20.110.116:/opt/petablocks/wiki-customizations/
+
+      - name: Apply BookStack customizations
+        run: |
+          ssh -o StrictHostKeyChecking=no root@10.20.110.116 \
+            "docker cp /opt/petablocks/wiki-customizations/. pb-wiki:/config/www/public/"
+
+      - name: Discord Notification
+        if: always()
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: ${{ job.status }}
+          title: "📚 Wiki Deployment"
+          content: "wiki.petablocks.com → ${{ job.status }}"
+
+      - name: Print Deploy Receipt
+        if: always()
+        run: |
+          curl -s -X POST http://10.95.0.185:8006/webhook/deploy \
+            -H "Content-Type: application/json" \
+            -d '{
+              "project": ${{ toJson(github.repository) }},
+              "status": "${{ job.status }}",
+              "branch": "${{ github.ref_name }}",
+              "commit": "${{ github.sha }}",
+              "message": ${{ toJson(github.event.head_commit.message || '') }},
+              "deployer": ${{ toJson(github.actor) }},
+              "environment": "fea-wiki",
+              "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            }'
