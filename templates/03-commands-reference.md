@@ -21,18 +21,22 @@ A complete reference of in-game commands available across PETABLOCKS servers.
 
 ---
 
-## 🛡️ Land & Claims
+## 🛡️ Land & Claims (FTB Chunks, FTB Teams & FLAN)
 
 | Command | Description |
 |---|---|
-| `/claim` | Opens claim creation mode or claim management settings. |
-| `/trust <player>` | Gives build, break, and chest permissions in your claim. |
-| `/containertrust <player>` | Gives chest/inventory access only. |
-| `/accesstrust <player>` | Gives access to doors, buttons, and switches. |
-| `/untrust <player>` | Removes a player's trust permissions from the claim. |
-| `/claimslist` | Lists all your active land claims and coordinate locations. |
-| `/abandonclaim` | Deletes the claim you are standing in and refunds claim blocks. |
-| `/abandonallclaims` | Deletes all claims owned by you on the server. |
+| `/ftbchunks claim` | Claims the chunk you are standing in. |
+| `/ftbchunks unclaim` | Unclaims the current chunk. |
+| `/ftbchunks load` | Force-loads the current chunk so farms/machinery run 24/7. |
+| `/ftbchunks unload` | Removes force-load chunkloading from the current chunk. |
+| `/ftbteams party create [name]` | Creates an FTB Team for you and your friends. |
+| `/ftbteams party invite <player>` | Invites a player to join your FTB Team. |
+| `/ftbteams party kick <player>` | Removes a player from your FTB Team. |
+| `/flan claim` | Creates a FLAN land claim using your selected coordinates. |
+| `/flan trust <player> <perm>` | Grants a player permission in your FLAN claim (`ALL`, `BUILD`, `CONTAINER`). |
+| `/flan untrust <player>` | Revokes permissions from a player. |
+| `/flan delete` | Deletes the FLAN claim you are standing inside. |
+| `/flan list` | Lists all your active FLAN claims and coordinates. |
 
 ---
 

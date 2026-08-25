@@ -1,6 +1,6 @@
 # 🚀 Getting Started on PETABLOCKS
 
-Welcome to the official **PETABLOCKS** community! This guide walks you through connecting to our server network, installing modpacks, and understanding our core mechanics.
+Welcome to the official **PETABLOCKS** community! This guide walks you through connecting to our server network, installing modpacks, and protecting your base with **FTB Chunks** & **FLAN**.
 
 ---
 
@@ -30,20 +30,34 @@ Welcome to the official **PETABLOCKS** community! This guide walks you through c
 
 ---
 
-## 🛡️ Protecting Your Base (Land Claims)
+## 🛡️ Protecting Your Base (FTB Chunks & FLAN Claims)
 
-To protect your builds, chests, and machinery against griefing:
-1. Hold a **Golden Shovel** (or type `/claim`).
-2. **Right-click** one corner of the area you wish to protect.
-3. Walk to the opposite corner and **right-click** again.
-4. You will see gold blocks and glowstone outline your claim boundaries.
+All PETABLOCKS servers use **FTB Chunks** and **FLAN** to give you full chunk-based and area-based land protection with chunkloading support.
 
-### Claim Management Commands:
-- `/trust <player>` — Grants full build and chest access to a friend in your claim.
-- `/accesstrust <player>` — Allows a player to open doors, use buttons, and levers.
-- `/containertrust <player>` — Allows access to chests and machinery only.
-- `/untrust <player>` — Revokes all permissions from a player.
-- `/abandonclaim` — Removes the claim you are currently standing inside.
+### Option 1: Claiming with FTB Chunks (Map UI)
+1. Open your inventory and click the **Map Icon** (or press `M` / open the FTB Chunks Claim Map).
+2. **Left-click** individual chunks to claim them. Claimed chunks are outlined in your team color.
+3. **Shift + Left-click** on claimed chunks to **Force Load (Chunkload)** them so your automated machines, crops, and farms run even when you are offline or elsewhere in the world!
+4. **Right-click** on a chunk to unclaim or unload it.
+
+#### FTB Teams & Permissions:
+- Open the **My Team** settings icon (top left of inventory) to create a team, customize colors, and invite friends.
+- Use `/ftbteams party invite <player>` to add friends to your team so they can build and use machinery in your claimed chunks.
+
+---
+
+### Option 2: Claiming with FLAN (Golden Hoe / Tool)
+FLAN allows 3D block-by-block custom claiming:
+1. Hold a **Golden Hoe** (or the server FLAN claim tool).
+2. **Right-click** block A (first corner), then **Right-click** block B (opposite corner).
+3. Right-click to confirm your new claim!
+
+#### FLAN Claim Commands:
+- `/flan claim` — Create a claim over your selected area.
+- `/flan trust <player> <permission>` — Grant specific permissions (`BUILD`, `INTERACT`, `CONTAINER`, or `ALL`).
+- `/flan untrust <player>` — Revoke permissions from a player.
+- `/flan delete` — Delete the claim you are currently standing inside.
+- `/flan list` — List all your active FLAN claims and coordinates.
 
 ---
 
