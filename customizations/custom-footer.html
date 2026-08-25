@@ -2,14 +2,22 @@
      Inject via: Admin → Settings → Customisation → Custom HTML Body End Content -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const footer = document.querySelector('.footer-links');
+    const footer = document.querySelector('footer') || document.querySelector('.footer-links') || document.body;
     if (footer) {
-      const pb = document.createElement('span');
-      pb.style.marginLeft = '8px';
-      pb.style.color = '#6b7280';
-      pb.style.fontSize = '0.875rem';
-      pb.textContent = '© PETABLOCKS Network';
-      footer.appendChild(pb);
+      const container = document.createElement('div');
+      container.style.textAlign = 'center';
+      container.style.padding = '12px 16px';
+      container.style.fontSize = '12px';
+      container.style.fontFamily = "'Inter', system-ui, sans-serif";
+      container.style.color = '#9ca3af';
+      container.style.borderTop = '1px solid rgba(255, 255, 255, 0.05)';
+      container.style.marginTop = '24px';
+      container.innerHTML = `
+        <span>&copy; ${new Date().getFullYear()} <strong>PETABLOCKS</strong> Knowledge Base <span style="font-family: monospace; color: #10b981; margin-left: 6px;">v2.2.0</span></span>
+        <span style="margin: 0 8px; opacity: 0.4;">•</span>
+        <span>Hosted on Enterprise Infrastructure by <a href="https://mdrcloud.com" target="_blank" rel="noreferrer" style="color: #10b981; text-decoration: none; font-weight: bold;">MDRCloud</a></span>
+      `;
+      footer.appendChild(container);
     }
   });
 </script>
