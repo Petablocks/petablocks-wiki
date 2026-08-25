@@ -2,6 +2,7 @@ name: Deploy Wiki Config to PETABLOCKS-FEA
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   deploy:
