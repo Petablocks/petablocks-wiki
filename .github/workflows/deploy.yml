@@ -29,6 +29,8 @@ jobs:
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           status: ${{ job.status }}
+          nofail: true
+          ack_no_webhook: true
           title: "📚 Wiki Deployment"
           content: "wiki.petablocks.com → ${{ job.status }}"
 
