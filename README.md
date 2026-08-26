@@ -1,50 +1,15 @@
-# petablocks-wiki
+# 📚 PETABLOCKS Wiki (`petablocks-wiki`)
 
-BookStack wiki configuration and customizations for [wiki.petablocks.com](https://wiki.petablocks.com).
+> Source guides, custom themes, and template documentation for the official **PETABLOCKS BookStack Knowledge Base**.
+>
+> 🚀 **Hosted & Powered by [MDRCloud](https://mdrcloud.co.uk)** • **Version**: `v1.1.0` • **Endpoint**: `https://wiki.petablocks.com`
 
-## About BookStack
+---
 
-BookStack is a WYSIWYG wiki platform with a **Shelves → Books → Chapters → Pages** hierarchy. No Markdown required — contributors use a rich text editor. Players get a clean, searchable, mobile-responsive site.
+## 🌟 Contents & Guides
 
-It runs as a Docker container on PETABLOCKS-FEA backed by MariaDB on PETABLOCKS-DB.
-
-## Structure
-
-```
-petablocks-wiki/
-├── customizations/
-│   ├── custom-head.html    # Injected into <head> — Inter font, brand colours
-│   └── custom-footer.html  # Injected at body end — © PETABLOCKS branding
-└── .env.example
-```
-
-## Applying Customizations
-
-Customizations are synced automatically on deploy. To apply them manually in BookStack:
-
-1. Go to **Admin → Settings → Customisation**
-2. Paste `custom-head.html` into **Custom HTML Head Content**
-3. Paste `custom-footer.html` into **Custom HTML Body End Content**
-
-## First-Time BookStack Setup
-
-1. BookStack starts via `petablocks-infra` docker-compose on the FEA VM
-2. Browse to `https://wiki.petablocks.com`
-3. Default credentials: `admin@admin.com` / `password` — **change immediately**
-4. Admin → Settings → set App Name: `PETABLOCKS Wiki`
-5. Upload your logo under Admin → Settings → Customisation → App Logo
-
-## Recommended Role Setup
-
-| Role | Who | Permissions |
-|---|---|---|
-| **Viewer** | All registered players | Read all public books |
-| **Editor** | Staff | Create and edit pages in all books |
-| **Admin** | Server management | Full access |
-
-Set registration to open (or Discord OAuth via SAML) in **Admin → Settings → Authentication**.
-
-## Deployment
-
-Automatically deployed to `PETABLOCKS-FEA` via GitHub Actions on every push to `main`.
-Requires the `DISCORD_WEBHOOK` secret in repository settings.
+* **`templates/01-welcome.md`**: Welcome to PETABLOCKS and quickstart rules.
+* **`templates/02-getting-started.md`**: Comprehensive Land Claiming Guides (**FTB Chunks** + **FLAN**).
+* **`templates/03-commands-reference.md`**: Complete player command index.
+* **`customizations/custom-head.html`**: Custom fonts, CSS styling, and favicon injection.
+* **`customizations/custom-footer.html`**: Branded footer with MDRCloud hosting attribution and versioning.
