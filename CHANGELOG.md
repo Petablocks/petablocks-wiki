@@ -4,6 +4,13 @@ All notable changes to the PETABLOCKS Knowledge Base & Wiki templates will be do
 
 ---
 
+## [1.2.0] - 2026-09-03
+### Added
+- **📜 Standard Operating Procedures (`STANDARD_PROCEDURES.md`)**:
+  - Authoritative operational guide for AI agents and contributors on Wiki guide standards, SemVer versioning, and public repo security.
+
+---
+
 ## [1.1.0] - 2026-08-26
 ### Added
 - **Land Claiming Guides**:
